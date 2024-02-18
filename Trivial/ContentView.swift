@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    let triviaQuestions = Data().Questions.shuffled()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List(triviaQuestions, id: \.question) { trivia in
+                NavigationLink(destination: AnswerView(trivia: trivia)) {
+                    Text(trivia.question)
+                }
+            }
+            .navigationTitle("Presidential Trivia")
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
