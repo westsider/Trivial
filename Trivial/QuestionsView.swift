@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct QuestionsView: View {
     let triviaQuestions = Data().Questions.shuffled()
 
     var body: some View {
@@ -24,6 +24,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        QuestionsView()
     }
 }
