@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuestionsView: View {
     @State var catagory: Category
-    let triviaQuestions = DataViewModel().presitentQuestions.shuffled()
+    let triviaQuestions = DataViewModel().presidentQuestions.shuffled()
     
     let viewModel = DataViewModel()
 

@@ -17,8 +17,9 @@ struct HomeView: View {
                     .bold()
                 Picker("Account Type", selection: $selectedCategory) {
                     Text("Presidents").tag(Category.presidents)
-                    //Text("US History").tag(Category.usHistory)
+                    Text("US History").tag(Category.usHistory)
                     Text("Movies").tag(Category.movies)
+                    Text("Television").tag(Category.television)
                 }
                 .pickerStyle(.inline)
                 NavigationLink(destination: QuestionsView(catagory: selectedCategory)) {
