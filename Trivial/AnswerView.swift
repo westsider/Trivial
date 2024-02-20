@@ -23,7 +23,7 @@ struct AnswerView: View {
                 .font(.body)
                 .padding()
                 .bold()
-            Button("Search on Google") {
+            Button("More Information") {
                 isSafariViewPresented.toggle()
             }
             .buttonStyle(PressableColorButtonStyle(color: .blue))

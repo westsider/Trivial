@@ -8,22 +8,25 @@
 import SwiftUI
 
 struct QuestionsView: View {
-    let triviaQuestions = Data().Questions.shuffled()
+    @State var catagory: Category
+    let triviaQuestions = DataViewModel().presitentQuestions.shuffled()
+    
+    let viewModel = DataViewModel()
 
     var body: some View {
         NavigationView {
-            List(triviaQuestions, id: \.question) { trivia in
+            List(viewModel.selectQuestion(category: catagory), id: \.question) { trivia in
                 NavigationLink(destination: AnswerView(trivia: trivia)) {
                     Text(trivia.question)
                 }
             }
-            .navigationTitle("Presidential Trivia")
+            .navigationTitle("\(catagory.rawValue) Trivia")
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionsView()
+        QuestionsView(catagory: .presidents)
     }
 }
